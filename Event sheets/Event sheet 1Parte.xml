@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1Parte</name>
+    <events>
+        <variable constant="0" name="usavel" sid="5907527469858978" static="0" type="number">0</variable>
+        <variable constant="0" name="flashlight" sid="3674679527255601" static="0" type="number">100</variable>
+        <variable constant="0" name="ontheair" sid="202315613167333" static="0" type="number">0</variable>
+        <variable constant="0" name="podesair" sid="469864935653495" static="0" type="number">0</variable>
+        <variable constant="0" name="pegouchave" sid="1560861443203686" static="0" type="number">0</variable>
+        <event-block sid="4478162291072987">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4154739162509846" type="player">
+                    <param id="0" name="Object">Escada</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="4402763824648976" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="522925931620228" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="277075958197219" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="397217175321318" type="System">
+                    <param id="0" name="Variable">ontheair</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="128838181162091">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="865405020719467" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="997196129177620" type="player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action behavior="8Direction" id="5" name="Set acceleration" sid="233717302971022" type="player">
+                            <param id="0" name="Acceleration">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="482944796284579">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="985175652608320" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="624440284904111" type="player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                        <action behavior="8Direction" id="5" name="Set acceleration" sid="493846452538138" type="player">
+                            <param id="0" name="Acceleration">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="600524243223119">
+            <conditions>
+                <condition id="-22" name="Else" sid="535405574006352" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="229387532339079" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="913779545695221" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2665825316564247">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="716244085203137" type="player">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8261585930636819" type="System">
+                    <param id="0" name="Variable">pegouchave</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5862064206606533" type="Sprite3" />
+            </actions>
+        </event-block>
+        <event-block sid="7412783623963092">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="6533139099714345" type="player">
+                    <param id="0" name="Object">porta</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="8761494418140747" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="244848525231048" type="System">
+                    <param id="0" name="Variable">podesair</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="6262950943505045" type="System" />
+                <action id="-9" name="Set value" sid="6749878263100173" type="System">
+                    <param id="0" name="Variable">pegouchave</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="441267104743473" type="System">
+                    <param id="0" name="Variable">usavel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2623382813083284">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9571172313677121" type="player">
+                    <param id="0" name="Object">Sprite4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="9237797738733051" type="Sprite9" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="4586998025200681" type="System">
+                    <param id="0" name="Layout">&quot;Tutorial&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="2000704832663335" type="System">
+                    <param id="0" name="Variable">pegouchave</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6170871690096807">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="7247161205787911" type="player">
+                    <param id="0" name="Object">porta</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1477615903100675" type="porta">
+                    <param id="0" name="Animation">&quot;piscant&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6883857030499574">
+            <conditions>
+                <condition id="-22" name="Else" sid="9545540219608188" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1045745651291509" type="porta">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="810528466235314">
+            <conditions />
+            <actions>
+                <action id="4" name="Set animation" sid="635093986757008" type="player">
+                    <param id="0" name="Animation">&quot;Lanterna&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1708862420533299">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6866025906345157" type="System">
+                    <param id="0" name="Variable">usavel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="194533776197945">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="594618700495258" type="player">
+                            <param id="0" name="Object">Sprite8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="970193098428634" type="Sprite8">
+                            <param id="0" name="Animation">&quot;usavel&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="828191974157634">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="437012857148829" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="413273211643953" type="Sprite8">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="473441338849779">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="914736934384204" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="220163411145524" type="player">
+                    <param id="0" name="Object">Sprite8</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="942369325538097" type="System">
+                    <param id="0" name="Variable">pegouchave</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="756520406272823" type="Escuro">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="261331225793246" type="System">
+                    <param id="0" name="Variable">podesair</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="1509397417589985" type="System">
+                    <param id="0" name="Variable">usavel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="6886264880262191" type="porta">
+                    <param id="0" name="Animation">&quot;fexada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="443248058225072">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="464209987206040" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="7" name="Is mirrored" sid="295399496566422" type="player" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="148610771190944" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="898685758588986" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="359453564337586">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="406286147246562" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="816204688436396" type="player">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="592121902225749">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="309609182005731" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="7" inverted="1" name="Is mirrored" sid="790182603490907" type="player" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="877758204366183" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="555871118851714" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="547927621527661">
+            <conditions>
+                <condition id="3" name="On key released" sid="160906404472277" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="660300602929986" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="991257884868512">
+            <conditions>
+                <condition id="3" name="On key released" sid="850157188871177" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="617608467764118" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="217992659966037">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="406986528893783" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="951209966729390" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="427083217985489" type="System">
+                    <param id="0" name="Variable">ontheair</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="720544673210805">
+            <conditions>
+                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="489743663432992" type="player" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="340222072031649" type="System">
+                    <param id="0" name="Variable">ontheair</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="191943143535376">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="954526165898742" type="player" />
+                <condition behavior="Platform" id="2" name="Is on floor" sid="880122261362539" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="672626268530651" type="player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="998865025886264">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="570366897470659" type="player" />
+                <condition behavior="Platform" id="2" name="Is on floor" sid="856356287599779" type="player" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="442621933769768" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="249063357192140" type="player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="935363244747866">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="983478167595797" type="player">
+                    <param id="0" name="Object">ladeira</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="278961848445467" type="player">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="443437330917280">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="897606591125931" type="System">
+                    <param id="0" name="Variable">ontheair</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">60</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="141446691969258" type="player">
+                    <param id="0" name="Animation">&quot;falling&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="598212402769696" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="997674643050912">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="261289917080959" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="805088634594781" type="player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="714025026618655" type="player">
+                    <param id="0" name="Animation">&quot;dead&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="170205074906525" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="254787367356103">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="593579353457029" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="569946545977110" type="Sprite9">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="107949377173005">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1553995207232998" type="player">
+                    <param id="0" name="Object">chao</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2028044868066254" type="System">
+                    <param id="0" name="Variable">ontheair</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1749860203389152">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7565045256663685" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="853771596739977" type="Sprite9">
+                    <param id="0" name="Instance variable">ison</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="39451968406767">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="315981405849165" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="55926200260753" type="Sprite9">
+                    <param id="0" name="Instance variable">ison</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7201806717926177">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8018503497777192" type="Sprite9">
+                    <param id="0" name="Instance variable">ison</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9523633661869294" type="System">
+                    <param id="0" name="Variable">flashlight</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="2713777156922091" type="Sprite9">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="31457059621883" type="System">
+                    <param id="0" name="Variable">flashlight</param>
+                    <param id="1" name="Value">0.1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3502623337620826" type="Sprite3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="787546628576416" type="Sprite3">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="881265881093344">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="3161394850558495" type="Sprite9">
+                    <param id="0" name="Instance variable">ison</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2048164001946779" type="System">
+                    <param id="0" name="Variable">flashlight</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="1947725176913959" type="Sprite9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="2135912214276404" type="System">
+                    <param id="0" name="Variable">flashlight</param>
+                    <param id="1" name="Value">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3623436710543463" type="Sprite3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="3213439670780849" type="Sprite3">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4232606335171471">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3746533688055241" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6994910390745848" type="Sprite12">
+                    <param id="0" name="X">player.X </param>
+                    <param id="1" name="Y">player.Y + 50</param>
+                </action>
+                <action id="-5" name="Set width" sid="8274882719643889" type="Sprite12">
+                    <param id="0" name="Width">flashlight</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8638629337907409">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1738925736517877" type="System">
+                    <param id="0" name="Variable">flashlight</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="771825032166221" type="Sprite9">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6971697149559105">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8171518800188517" type="System">
+                    <param id="0" name="Variable">usavel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1884131184396802" type="Sprite8">
+                    <param id="0" name="Animation">&quot;ativa&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="7551616890173247" type="porta">
+                    <param id="0" name="Animation">&quot;fexada&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6891743103928053">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="7579475799857818" type="player">
+                    <param id="0" name="Instance variable">imgonnadie</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="9924483763365272" type="System">
+                    <param id="0" name="Interval (seconds)">3.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="5240873197072131" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet tutorial</name>
+    <events>
+        <event-block sid="9883208081662479">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7668316827221118" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="2285603771470664" type="player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1052602291164689">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8114577641115496" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="7516196998305959" type="player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5466088923849385">
+            <conditions>
+                <condition id="2" name="Key is down" sid="6362063859779249" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="2280382702949781" type="player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7473334712723918">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="3632190940371654" type="player">
+                    <param id="0" name="Object">porta</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7672837655559165" type="porta">
+                    <param id="0" name="Animation">&quot;piscant&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8938231267212063">
+            <conditions>
+                <condition id="-22" name="Else" sid="3127380815006473" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8055490941425602" type="porta">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7662533156232739">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="1646467266078911" type="player">
+                    <param id="0" name="Object">porta</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="1775213239157742" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="3584902045726849" type="System">
+                    <param id="0" name="Layout">&quot;1Parte&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3033251986470495">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4665478438333679" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4171468444441005" type="System">
+                    <param id="0" name="Object to create">raindrop</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">random(WindowWidth + 2000)</param>
+                    <param id="3" name="Y">500</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="5593260009729142" type="raindrop">
+                    <param id="0" name="Angle">100 + random(-3,3)</param>
+                </action>
+                <action id="6" name="Set speed" sid="3291471613774754" type="raindrop">
+                    <param id="0" name="Speed">int(random(600,800))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2340696277928689">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5857002231066709" type="raindrop">
+                    <param id="0" name="Object">chao</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3588010555496759" type="System">
+                    <param id="0" name="Object to create">Splash</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">raindrop.x</param>
+                    <param id="3" name="Y">raindrop.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="409872963340133" type="raindrop" />
+            </actions>
+        </event-block>
+        <event-block sid="2449578224167079">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2552775022349667" type="raindrop">
+                    <param id="0" name="Object">Sprite13</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="5038928670746049" type="System">
+                    <param id="0" name="Object to create">Splash</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">raindrop.x</param>
+                    <param id="3" name="Y">raindrop.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8238852034491967" type="raindrop" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
